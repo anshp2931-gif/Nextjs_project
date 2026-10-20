@@ -1,67 +1,71 @@
 import Link from "next/link";
-import { ArrowRight, Building2, Code2, PenTool, Users } from "lucide-react";
+import { ArrowRight, Building2, Code2, PenTool, Users, Ghost } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="w-full max-w-3xl mx-auto py-10">
-      <nav className="flex items-center gap-2 text-sm text-slate-500 mb-12">
-        <Link href="/students" className="hover:text-slate-800">
+    <div className="w-full max-w-3xl mx-auto py-10 animate-in">
+      <nav className="flex items-center gap-2 text-sm text-dark-400 mb-12">
+        <Link href="/students" className="link-glow">
           Directory
         </Link>
-        <span>/</span>
-        <span className="text-slate-900 font-medium">Not Found</span>
+        <span className="text-dark-600">/</span>
+        <span className="text-dark-100 font-medium">Not Found</span>
       </nav>
 
       <div className="text-center mb-12">
-        <span className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-slate-600 bg-slate-100 border border-slate-200 rounded-md px-3 py-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
+        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-dark-700 to-dark-800 border border-dark-600 flex items-center justify-center mx-auto mb-4">
+          <Ghost className="w-7 h-7 text-dark-400" />
+        </div>
+
+        <span className="badge-mono inline-flex items-center gap-1.5 px-3 py-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
           <span>404 · ROUTE NOT FOUND</span>
         </span>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-4">
+        <h1 className="text-3xl sm:text-4xl font-extrabold gradient-text-warm mt-5">
           Student or department not found
         </h1>
 
-        <p className="text-sm text-slate-500 mt-2 max-w-lg mx-auto leading-relaxed">
+        <p className="text-sm text-dark-400 mt-3 max-w-lg mx-auto leading-relaxed">
           The requested directory entry or path could not be located. It may have moved or the identifier might be invalid.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-7">
           <Link
             href="/students"
-            className="w-full sm:w-auto px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md text-center"
+            className="glow-btn w-full sm:w-auto px-6 py-2.5 text-sm text-center"
           >
             Return to Students Directory
           </Link>
           <Link
             href="/departments"
-            className="w-full sm:w-auto px-5 py-2.5 text-sm font-medium text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 rounded-md text-center"
+            className="ghost-btn w-full sm:w-auto px-6 py-2.5 text-sm text-center"
           >
             Browse All Departments
           </Link>
         </div>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-lg overflow-hidden">
-        <div className="px-5 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between text-xs font-semibold">
-          <span className="text-slate-600 tracking-wider uppercase">
+      <div className="glass-surface overflow-hidden">
+        <div className="px-5 py-3 border-b border-dark-700/30 flex items-center justify-between text-xs font-semibold">
+          <span className="text-dark-300 tracking-wider uppercase">
             Suggested Starting Points
           </span>
-          <span className="text-slate-400 font-normal">Internal Routes</span>
+          <span className="text-dark-500 font-normal">Internal Routes</span>
         </div>
 
-        <div className="divide-y divide-slate-100 text-sm">
+        <div className="divide-y divide-dark-700/20 text-sm">
           <Link
             href="/departments"
-            className="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50 group"
+            className="px-5 py-4 flex items-center justify-between hover:bg-dark-700/15 transition-colors group"
           >
             <div className="flex items-center gap-3">
-              <Building2 className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
-              <span className="font-medium text-slate-800 group-hover:text-blue-600">
+              <Building2 className="w-4 h-4 text-dark-500 group-hover:text-accent-400 transition-colors" />
+              <span className="font-medium text-dark-200 group-hover:text-accent-300 transition-colors">
                 Computer Science Department
               </span>
             </div>
-            <span className="font-mono text-xs text-slate-400 group-hover:text-slate-600 flex items-center gap-1">
+            <span className="font-mono text-xs text-dark-500 group-hover:text-dark-300 flex items-center gap-1 transition-colors">
               /departments/computer-science
               <ArrowRight className="w-3.5 h-3.5" />
             </span>
@@ -69,15 +73,15 @@ export default function NotFound() {
 
           <Link
             href="/departments/computer-science/web-development"
-            className="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50 group"
+            className="px-5 py-4 flex items-center justify-between hover:bg-dark-700/15 transition-colors group"
           >
             <div className="flex items-center gap-3">
-              <Code2 className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
-              <span className="font-medium text-slate-800 group-hover:text-blue-600">
+              <Code2 className="w-4 h-4 text-dark-500 group-hover:text-accent-400 transition-colors" />
+              <span className="font-medium text-dark-200 group-hover:text-accent-300 transition-colors">
                 Web Development Specialization
               </span>
             </div>
-            <span className="font-mono text-xs text-slate-400 group-hover:text-slate-600 flex items-center gap-1">
+            <span className="font-mono text-xs text-dark-500 group-hover:text-dark-300 flex items-center gap-1 transition-colors">
               /departments/computer-science/web-development
               <ArrowRight className="w-3.5 h-3.5" />
             </span>
@@ -85,15 +89,15 @@ export default function NotFound() {
 
           <Link
             href="/departments"
-            className="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50 group"
+            className="px-5 py-4 flex items-center justify-between hover:bg-dark-700/15 transition-colors group"
           >
             <div className="flex items-center gap-3">
-              <PenTool className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
-              <span className="font-medium text-slate-800 group-hover:text-blue-600">
+              <PenTool className="w-4 h-4 text-dark-500 group-hover:text-accent-400 transition-colors" />
+              <span className="font-medium text-dark-200 group-hover:text-accent-300 transition-colors">
                 Design Department
               </span>
             </div>
-            <span className="font-mono text-xs text-slate-400 group-hover:text-slate-600 flex items-center gap-1">
+            <span className="font-mono text-xs text-dark-500 group-hover:text-dark-300 flex items-center gap-1 transition-colors">
               /departments/design
               <ArrowRight className="w-3.5 h-3.5" />
             </span>
@@ -101,15 +105,15 @@ export default function NotFound() {
 
           <Link
             href="/students"
-            className="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50 group"
+            className="px-5 py-4 flex items-center justify-between hover:bg-dark-700/15 transition-colors group"
           >
             <div className="flex items-center gap-3">
-              <Users className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
-              <span className="font-medium text-slate-800 group-hover:text-blue-600">
+              <Users className="w-4 h-4 text-dark-500 group-hover:text-accent-400 transition-colors" />
+              <span className="font-medium text-dark-200 group-hover:text-accent-300 transition-colors">
                 All Students Directory
               </span>
             </div>
-            <span className="font-mono text-xs text-slate-400 group-hover:text-slate-600 flex items-center gap-1">
+            <span className="font-mono text-xs text-dark-500 group-hover:text-dark-300 flex items-center gap-1 transition-colors">
               /students
               <ArrowRight className="w-3.5 h-3.5" />
             </span>

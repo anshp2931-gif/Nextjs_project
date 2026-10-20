@@ -10,25 +10,25 @@ export default function ErrorBoundary({
   reset: () => void;
 }) {
   return (
-    <div className="w-full max-w-lg mx-auto py-16 text-center">
-      <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto mb-4">
-        <AlertCircle className="w-6 h-6" />
+    <div className="w-full max-w-lg mx-auto py-16 text-center animate-in">
+      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-rose-500/10 border border-red-500/20 text-red-400 flex items-center justify-center mx-auto mb-5">
+        <AlertCircle className="w-7 h-7" />
       </div>
-      <h2 className="text-2xl font-bold text-slate-900">Something went wrong</h2>
-      <p className="text-sm text-slate-500 mt-2">
+      <h2 className="text-2xl font-extrabold gradient-text-warm">Something went wrong</h2>
+      <p className="text-sm text-dark-400 mt-2">
         An error occurred while loading this page.
       </p>
 
       <div className="mt-6 flex items-center justify-center gap-3">
         <button
           onClick={() => reset()}
-          className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md"
+          className="glow-btn px-5 py-2.5 text-sm"
         >
           Try again
         </button>
         <Link
           href="/"
-          className="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 rounded-md"
+          className="ghost-btn px-5 py-2.5 text-sm"
         >
           Back to Students
         </Link>
